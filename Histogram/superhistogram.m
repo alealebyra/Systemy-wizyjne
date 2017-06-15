@@ -1,0 +1,20 @@
+clear all;
+close all;
+A=imread('phobos.bmp');
+load histogramZadany;
+B1=histeq(A);
+B=histeq(A, histogramZadany);
+
+figure(1);
+subplot(2,2,1);
+imshow(A);
+subplot(2,2,2);
+imshow(B);
+subplot(2,2,3);
+C=imadjust(B);
+imshow(C);
+subplot(2,2,4);
+D=adapthisteq(B);
+imshow(D);
+figure(2);
+imshow(B1);
